@@ -5,6 +5,7 @@
 	<artifactId>AntiPvPlogInfactionsType</artifactId>
 	<version>0.5.0-SNAPSHOT</version>
 	<build>
+	<finalName>InFacPvPLogging</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

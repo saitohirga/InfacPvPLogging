@@ -30,7 +30,7 @@ public class AntiLogEvent implements Listener {
 
 		final Player attacker = (Player) event.getDamager();
 		final Player attacked = (Player) event.getEntity();
-		if(!(attacked.hasPermission("nopvplog.exempt"))){
+		if(!(attacked.hasPermission("Infac.exempt"))){
 		if(event.getDamager() instanceof Player && event.getEntity() instanceof Player){
 
 			if(!(inCombat.contains(attacker))){
@@ -71,11 +71,9 @@ public class AntiLogEvent implements Listener {
 		Player player = event.getPlayer();
 		if(inCombat.contains(player)){
 			if (inCombat.contains(player)) {
-				CompleteDossier dossier = Infractions.getCompleteDossier(player
-						.getName());
-				dossier.cite(new Infraction(player.getUniqueId(), System
-						.currentTimeMillis(), "Testing.", 80, new Issuer(
-						IssuerType.CUSTOM, "TESTING")));
+		
+				CompleteDossier dossier = Infractions.getCompleteDossier(player.getName());
+				dossier.cite(new Infraction(player.getUniqueId(), System.currentTimeMillis(), "Testing.", 80, new Issuer(IssuerType.CUSTOM, "TESTING")));
 			}
 		}
 	}
