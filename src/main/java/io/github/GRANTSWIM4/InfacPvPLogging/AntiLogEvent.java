@@ -1,14 +1,12 @@
 package io.github.GRANTSWIM4.InfacPvPLogging;
 
-import java.util.ArrayList;
-
+import java.util.ArrayList; 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-
 import com.censoredsoftware.infractions.bukkit.Infraction;
 import com.censoredsoftware.infractions.bukkit.Infractions;
 import com.censoredsoftware.infractions.bukkit.dossier.CompleteDossier;
@@ -61,7 +59,6 @@ public class AntiLogEvent implements Listener {
 		Player player = event.getPlayer();
 		if(inCombat.contains(player)){
 			if (inCombat.contains(player)) {
-		
 				CompleteDossier dossier = Infractions.getCompleteDossier(player.getName());
 				dossier.cite(new Infraction(player.getUniqueId(), System.currentTimeMillis(), "Testing.", 80, new Issuer(IssuerType.CUSTOM, "TESTING")));
 			}

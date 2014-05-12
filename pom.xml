@@ -40,7 +40,7 @@
 			<id>censored-software</id>
 			<url>http://repo.censoredsoftware.com</url>
 		</repository>
-	</repositories>
+    </repositories> 
 	<dependencies>
 		<dependency>
 			<groupId>org.bukkit</groupId>
