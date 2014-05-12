@@ -7,7 +7,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import com.censoredsoftware.infractions.bukkit.Infraction;
@@ -57,15 +56,6 @@ public class AntiLogEvent implements Listener {
 		}
 	}
 }
-	@EventHandler
-	public void playerLogEvent(PlayerCommandPreprocessEvent event){
-		if(plugin.getConfig().getBoolean("Disable_Commands_In_PVP") == true){
-			Player commandguy = event.getPlayer();
-			if(inCombat.contains(commandguy)){
-				event.setCancelled(true);
-			}
-		}
-	}
 	@EventHandler
 	public void onPlayerLogEvent(PlayerQuitEvent event){
 		Player player = event.getPlayer();

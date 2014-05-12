@@ -1,0 +1,4 @@
+name: InfacPvPLogger
+main: io.github.GRANTSWIM4.InfacPvPLogging.Main
+version: 1.0
+softdepend: [Infractions]
