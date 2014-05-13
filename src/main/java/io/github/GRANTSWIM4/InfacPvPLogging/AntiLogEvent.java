@@ -60,7 +60,7 @@ public class AntiLogEvent implements Listener {
 		if(inCombat.contains(player)){
 			if (inCombat.contains(player)) {
 				CompleteDossier dossier = Infractions.getCompleteDossier(player.getName());
-				dossier.cite(new Infraction(player.getUniqueId(), System.currentTimeMillis(), "Testing.", 80, new Issuer(IssuerType.CUSTOM, "TESTING")));
+				dossier.cite(new Infraction(player.getUniqueId(), System.currentTimeMillis(), "PvP Loged", 5, new Issuer(IssuerType.CUSTOM, "PvPLogPlugin")));
 			}
 		}
 	}

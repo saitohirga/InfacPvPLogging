@@ -1,8 +1,7 @@
 package io.github.GRANTSWIM4.InfacPvPLogging;
 
-import java.io.IOException;
-
 import org.bukkit.plugin.java.JavaPlugin;
+import java.io.IOException;
 
 public final class Main extends JavaPlugin {
  	@Override
