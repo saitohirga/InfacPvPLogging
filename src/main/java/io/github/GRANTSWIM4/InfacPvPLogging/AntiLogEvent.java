@@ -27,7 +27,6 @@ public class AntiLogEvent implements Listener {
 
 		final Player attacker = (Player) event.getDamager();
 		final Player attacked = (Player) event.getEntity();
-		if(!(attacked.hasPermission("Infac.exempt"))){
 		if(event.getDamager() instanceof Player && event.getEntity() instanceof Player){
 
 			if(!(inCombat.contains(attacker))){
@@ -53,7 +52,7 @@ public class AntiLogEvent implements Listener {
 			}     
 		}
 	}
-}
+
 	@EventHandler
 	public void onPlayerLogEvent(PlayerQuitEvent event){
 		Player player = event.getPlayer();

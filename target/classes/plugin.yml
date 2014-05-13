@@ -2,7 +2,4 @@ name: InfacPvPLogger
 main: io.github.GRANTSWIM4.InfacPvPLogging.Main
 version: 1.0
 softdepend: [Infractions]
- permissions:
-   Infac.exempt:
-     description: Used for if you are staff and don't want the plugin to work on you
-     
+ 
