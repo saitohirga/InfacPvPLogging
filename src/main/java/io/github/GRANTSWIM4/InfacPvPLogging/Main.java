@@ -1,17 +1,11 @@
 package io.github.GRANTSWIM4.InfacPvPLogging;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import java.io.IOException;
 
 public final class Main extends JavaPlugin {
  	@Override
 	public void onEnable() {
- 		
-		try {
-			Metrics metrics = new Metrics(this);
-			metrics.start();
-		} catch (IOException e) {
-		}
+ 
 		if (getServer().getPluginManager().getPlugin("Infractions") != null) {
 			getLogger().info(
 					"Protecting your server form PvP logger since 2014!");
