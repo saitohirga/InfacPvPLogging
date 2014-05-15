@@ -9,8 +9,7 @@ public final class Main extends JavaPlugin {
 		if (getServer().getPluginManager().getPlugin("Infractions") != null) {
 			getLogger().info(
 					"Protecting your server form PvP logger since 2014!");
-			getServer().getPluginManager().registerEvents(
-					new AntiLogEvent(this), this);
+	        getServer().getPluginManager().registerEvents(new AntiLogEvent(), this);
 			this.saveDefaultConfig();
 		    this.getConfig().options().copyDefaults(true);
 		} else {
