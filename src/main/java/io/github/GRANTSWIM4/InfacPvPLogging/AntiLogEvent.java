@@ -19,7 +19,7 @@ import com.censoredsoftware.infractions.bukkit.issuer.IssuerType;
 
 
 
-public abstract class AntiLogEvent implements Listener, Plugin {
+public class AntiLogEvent implements Listener {
 
 	 
 	@EventHandler
@@ -47,7 +47,7 @@ public void onAntiLogDmg(EntityDamageByEntityEvent event) {
       this.antilog.add(target.getName());
       player.sendMessage(ChatColor.GOLD + "You're now in Combat!");
       target.sendMessage(ChatColor.GOLD + "You're now in Combat!");
-      Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
+      Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this, new Runnable() {
         public void run() {
           if ((antilog.contains(player.getName())) && 
             (antilog.contains(target.getName()))) {

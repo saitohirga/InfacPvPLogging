@@ -5,7 +5,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class Main extends JavaPlugin {
  	@Override
 	public void onEnable() {
- 
 		if (getServer().getPluginManager().getPlugin("Infractions") != null) {
 			getLogger().info(
 					"Protecting your server form PvP logger since 2014!");
