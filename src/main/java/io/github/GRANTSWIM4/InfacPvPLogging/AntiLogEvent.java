@@ -19,6 +19,7 @@ import com.censoredsoftware.infractions.bukkit.issuer.IssuerType;
 
 
 
+
 public class AntiLogEvent implements Listener {
 
 	 
@@ -49,7 +50,7 @@ public void onAntiLogDmg(EntityDamageByEntityEvent event) {
       target.sendMessage(ChatColor.GOLD + "You're now in Combat!");
       Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this, new Runnable() {
         public void run() {
-          if ((antilog.contains(player.getName())) && 
+          if ((antilog.contains(player.getName())) &&
             (antilog.contains(target.getName()))) {
            antilog.remove(player.getName());
            antilog.remove(target.getName());
