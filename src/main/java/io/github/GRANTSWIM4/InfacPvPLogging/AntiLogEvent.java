@@ -23,6 +23,10 @@ import com.censoredsoftware.infractions.bukkit.issuer.IssuerType;
  */
 public class AntiLogEvent implements Listener
 {
+	// Variables
+	private List<String> antilog = new ArrayList<String>();
+	private Plugin plugin;
+	
 	/**
 	 * Constructor
 	 */
@@ -79,8 +83,4 @@ public class AntiLogEvent implements Listener
 		    	}
 		}
 	}
-
-	// Variables
-	private List<String> antilog = new ArrayList<String>();
-	private Plugin plugin;
 }
