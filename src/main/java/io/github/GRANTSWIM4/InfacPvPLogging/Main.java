@@ -4,6 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin
 {
+	// Sanity variable
 	private boolean infractionsInstalled;
 	
 	/**
@@ -12,6 +13,7 @@ public final class Main extends JavaPlugin
  	@Override
 	public void onEnable()
 	{
+		// Perform a sanity check
 		this.infractionsInstalled = getServer().getPluginManager().getPlugin("Infractions") != null;
 		if (this.infractionsInstalled)
 		{
