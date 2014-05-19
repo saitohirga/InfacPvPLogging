@@ -6,26 +6,26 @@ public final class Main extends JavaPlugin
 {
 	// Sanity variable
 	private boolean infractionsInstalled;
-	
+
 	/**
 	 * Bukkit enable.
 	 */
- 	@Override
+	@Override
 	public void onEnable()
 	{
 		// Perform a sanity check
 		this.infractionsInstalled = getServer().getPluginManager().getPlugin("Infractions") != null;
-		if (this.infractionsInstalled)
+		if(this.infractionsInstalled)
 		{
 			// Welcome message
 			getLogger().info("Protecting your server form PvP logger since 2014!");
-			
+
 			// Register events
-	        	getServer().getPluginManager().registerEvents(new AntiLogEvent(this), this);
-	        	
-	        	// Handle config
+			getServer().getPluginManager().registerEvents(new AntiLogEvent(this), this);
+
+			// Handle config
 			this.saveDefaultConfig();
-		    	this.getConfig().options().copyDefaults(true);
+			this.getConfig().options().copyDefaults(true);
 		}
 		else
 		{
@@ -34,7 +34,7 @@ public final class Main extends JavaPlugin
 			getServer().getPluginManager().disablePlugin(this);
 		}
 	}
-	
+
 	/**
 	 * Bukkit disable.
 	 */
