@@ -77,7 +77,7 @@ public class AntiLogEvent implements Listener {
 											+ "You can now log out safely.");
 								}
 							}
-						}, 50L);
+						}, 1000L);
 			}
 		}
 	}
