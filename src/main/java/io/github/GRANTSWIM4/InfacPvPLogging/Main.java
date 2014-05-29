@@ -25,7 +25,7 @@ public final class Main extends JavaPlugin {
 		} else {
 			// Can't run without Infractions installed
 			getLogger()
-					.info("You don't have Infractions get it at http://dev.bukkit.org/bukkit-plugins/infractions/ Bye bye ");
+					.info("You don't have Infractions get it at http://dev.bukkit.org/bukkit-plugins/infractions/ ");
 			getServer().getPluginManager().disablePlugin(this);
 		}
 	}
