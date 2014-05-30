@@ -24,9 +24,11 @@ import com.censoredsoftware.infractions.bukkit.issuer.IssuerType;
  */
 public class AntiLogEvent implements Listener {
 	// Constants
-	private static final String IN_COMBAT = ChatColor.GOLD + "You're now in Combat!";
-	private static final String SAFE = ChatColor.GREEN + "You can now log out safely.";
-	
+	private static final String IN_COMBAT = ChatColor.GOLD
+			+ "You're now in Combat!";
+	private static final String SAFE = ChatColor.GREEN
+			+ "You can now log out safely.";
+
 	// Variables
 	private List<String> antilog = new ArrayList<String>();
 	private Plugin plugin;
@@ -45,10 +47,11 @@ public class AntiLogEvent implements Listener {
 	public void onAntiLogQuit(PlayerQuitEvent event) {
 		Player p = event.getPlayer();
 		if (this.antilog.contains(p.getName())) {
-			CompleteDossier dossier = Infractions.getCompleteDossier(p.getName());
-			dossier.cite(new Infraction(p.getUniqueId(),
-			System .currentTimeMillis(), "PvP Logged", 1,
-			new Issuer(IssuerType.CUSTOM, "PvPLogPlugin")));
+			CompleteDossier dossier = Infractions.getCompleteDossier(p
+					.getName());
+			dossier.cite(new Infraction(p.getUniqueId(), System
+					.currentTimeMillis(), "PvP Logged", 1, new Issuer(
+					IssuerType.CUSTOM, "PvPLogPlugin")));
 		}
 	}
 
@@ -57,43 +60,48 @@ public class AntiLogEvent implements Listener {
 	 */
 	@EventHandler
 	public void onAntiLogDmg(EntityDamageByEntityEvent event) {
-		if(!event.isCancelled() || !(event.getentity() instanceof Player)) return;
+		if (!event.isCancelled() || !(event.getEntity() instanceof Player))
+			return;
 		Player target = (Player) event.getEntity();
 		Player damager = null;
-		
-		// Arrow		
+
+		// Arrow
 		if (event.getDamager() instanceof Arrow) {
 			Arrow arrow = (Arrow) event.getDamager();
 			if (arrow.getShooter() instanceof Player) {
 				damager = (Player) arrow.getShooter();
 			}
 		}
-		
+
 		// Player
-		if (((event.getDamager() instanceof Player) {
+		if (((event.getDamager() instanceof Player))) {
 			damager = (Player) event.getEntity();
 		}
-		
+
 		// Antilog
-		if ((!this.antilog.contains(damager.getName())) && (!this.antilog.contains(target.getName()))) {
-			final String damagerName = damager.getName();
-			final String targetName = target.getName();
-			this.antilog.add(damagerName;
-			this.antilog.add(targetName;
-			damager.sendMessage(IN_COMBAT);
+		if ((!this.antilog.contains(damager.getName()))
+				&& (!this.antilog.contains(target.getName()))) {
+			final String DamagerName = damager.getName();
+			final String TargetName = target.getName();
+			this.antilog.add(DamagerName);
+			this.antilog.add(TargetName);
 			target.sendMessage(IN_COMBAT);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable() {
-				public void run() {
-					if (antilog.contains(damager.getName()) && antilog .contains(targetName)) {
-						antilog.remove(damagerName);
-						antilog.remove(targetName);
-						Player damage = Bukkit.getPlayer(damagerName);
-						if(damage != null) damage.sendMessage(SAFE);
-						Player targ = Bukkit.getPlayer(targetName);
-						if(targ != null) targ.sendMessage(SAFE);
-					}
-				}
-			}, 1000L);
+			Bukkit.getServer().getScheduler()
+					.scheduleSyncDelayedTask(this.plugin, new Runnable() {
+						public void run() {
+							if (antilog.contains(DamagerName)
+									&& antilog.contains(TargetName)) {
+								antilog.remove(DamagerName);
+								antilog.remove(TargetName);
+								Player damage = Bukkit.getPlayer(DamagerName);
+								if (damage != null)
+									damage.sendMessage(SAFE);
+								Player targ = Bukkit.getPlayer(TargetName);
+								if (targ != null)
+									targ.sendMessage(SAFE);
+							}
+						}
+					}, 1000L);
 		}
 	}
 }
