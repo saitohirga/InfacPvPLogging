@@ -74,13 +74,16 @@ public class AntiLogEvent implements Listener
 		}
 
 		// Player
-		else if(((event.getDamager() instanceof Player)))
+		else if(event.getDamager() instanceof Player)
 		{
-			damager = (Player) event.getEntity();
+			damager = (Player) event.getDamager();
 		}
 
 		// Anything else
 		else return;
+
+		// Sanity Check
+		if(target.equals(damager)) return;
 
 		// Antilog
 		processPlayer(target);
