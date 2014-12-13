@@ -1,10 +1,5 @@
 package io.github.GRANTSWIM4.InfacPvPLogging;
 
-import com.censoredsoftware.infractions.bukkit.Infraction;
-import com.censoredsoftware.infractions.bukkit.Infractions;
-import com.censoredsoftware.infractions.bukkit.dossier.CompleteDossier;
-import com.censoredsoftware.infractions.bukkit.issuer.Issuer;
-import com.censoredsoftware.infractions.bukkit.issuer.IssuerType;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Arrow;
@@ -49,9 +44,7 @@ public class AntiLogEvent implements Listener
 		Player p = event.getPlayer();
 		if(this.antilog.contains(p.getName()))
 		{
-			CompleteDossier dossier = Infractions.getCompleteDossier(p.getName());
-			dossier.cite(new Infraction(p.getUniqueId(), System.currentTimeMillis(),
-					"PvP Logged", 1, new Issuer(IssuerType.CUSTOM, "PvPLogPlugin")));
+		// todo add Stuff to do when PvP loggged
 		}
 	}
 
