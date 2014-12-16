@@ -5,7 +5,7 @@
     <artifactId>AntiPvPlogInfactionsType</artifactId>
     <version>0.5.0-SNAPSHOT</version>
 
-    <name>Anti-PvPlogIFE</name>
+    <name>MGPvPLogger</name>
     <description>An addon that cites you when you PvP log</description>
 
     <licenses>
@@ -20,31 +20,32 @@
         <url>http://builds.censoredsoftware.com/job/MGPvPLogger/</url>
     </ciManagement>
 
-    <repositories>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spigot.version>1.7.10-R0.1-SNAPSHOT</spigot.version>
+    </properties>
 
-    <repository>
-        <id>spigot-repo</id>
-        <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
-    </repository>
+    <repositories>
+        <repository>
+            <id>md_5-releases</id>
+            <url>http://repo.md-5.net/content/repositories/snapshots</url>
+        </repository>
     </repositories>
 
-        <dependencies>
-            <dependency>
-                <groupId>org.spigotmc</groupId>
-                <artifactId>spigot-api</artifactId>
-                <version>1.8-R0.1-SNAPSHOT</version>
-            </dependency>
-            <!--Bukkit API-->
-            <dependency>
-                <groupId>org.bukkit</groupId>
-                <artifactId>bukkit</artifactId>
-                <version>1.8-R0.1-SNAPSHOT</version>
-            </dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>${spigot.version}</version>
+            <scope>compile</scope>
+            <type>jar</type>
+            <optional>false</optional>
+        </dependency>
     </dependencies>
 
     <build>
         <defaultGoal>clean install</defaultGoal>
-        <finalName>InFacPvPLogging</finalName>
+        <finalName>MGPvPLogger</finalName>
         <resources>
             <resource>
                 <targetPath>.</targetPath>
